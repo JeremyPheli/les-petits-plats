@@ -1,5 +1,6 @@
 export class RecipeCard {
   constructor(recipe) {
+    this.image = recipe.image;
     this.name = recipe.name;
     this.time = recipe.time;
     this.description = recipe.description;
@@ -36,20 +37,26 @@ export class RecipeCard {
   createCard() {
     return `
       <div class="card">
-          <div class="card__image"></div>
+          <div class="card__image">
+            <img 
+              class="img__card"
+              src="./assets/img/${this.image}"
+              alt"images recipes"
+            />
+          </div>
           <div class="card__body">
               <div class="card__header">
-                  <h2 class="card__title">${this.name}</h2>
-                  <div class="card__timer">
-                      <img src="assets/icon_timer.svg" alt="">
-                      ${this.time} min
-                  </div>
+                <h2 class="card__title">${this.name}</h2>
               </div>
+              <p class="card__recipe">Recette</p>
               <div class="card__main">
+                <div class="description>
+                  <p class="card__description">${this.description}</p>
+                </div>
+                <p class="card__ingredients__title">Ingredients</p>
                   <ul class="card__ingredients">
                       ${this.createIngredientsList()}
                   </ul>
-                  <p class="card__description">${this.description}</p>
               </div>
           </div>
       </div>
