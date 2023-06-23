@@ -50,9 +50,7 @@ export class RecipeCard {
               </div>
               <p class="card__recipe">Recette</p>
               <div class="card__main">
-                <div class="description>
                   <p class="card__description">${this.description}</p>
-                </div>
                 <p class="card__ingredients__title">Ingredients</p>
                   <ul class="card__ingredients">
                       ${this.createIngredientsList()}
