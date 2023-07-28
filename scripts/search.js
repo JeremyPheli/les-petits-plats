@@ -97,64 +97,64 @@ export function mainSearch() {
   });
 }
 
-// function actionWhenADropdownItemIsClicked() {
-//   // console.log({ userSearch, results, resultatsWithTag, recipes })
-//   if (results.length > 0) {
-//     searchAndShowRecipesWithTag(results);
-//   } else {
-//     searchAndShowRecipesWithTag(recipes);
-//   }
-// }
+function actionWhenADropdownItemIsClicked() {
+  // console.log({ userSearch, results, resultatsWithTag, recipes })
+  if (results.length > 0) {
+    searchAndShowRecipesWithTag(results);
+  } else {
+    searchAndShowRecipesWithTag(recipes);
+  }
+}
 
-// /**
-//  * Recherche les recettes avec uniquement les tags
-//  * @param {Recipe[]} arr - tableau de recettes
-//  */
-// function searchAndShowRecipesWithTag(arr) {
-//   alreadyFilterWithTag = false;
-//   if (userSearch.ingredients.length > 0) {
-//     resultatsWithTag = arr.filter((recipe) =>
-//       userSearch.ingredients.every((ingredient) =>
-//         recipe.ingredientsLabelsList.includes(ingredient)
-//       )
-//     );
-//     alreadyFilterWithTag = true;
-//   }
-//   if (userSearch.appliances.length > 0) {
-//     if (alreadyFilterWithTag) {
-//       resultatsWithTag = resultatsWithTag.filter((recipe) =>
-//         userSearch.appliances.every(
-//           (appliance) => appliance === recipe.appliance.toLowerCase()
-//         )
-//       );
-//     } else {
-//       resultatsWithTag = arr.filter((recipe) =>
-//         userSearch.appliances.every(
-//           (appliance) => appliance === recipe.appliance.toLowerCase()
-//         )
-//       );
-//       alreadyFilterWithTag = true;
-//     }
-//   }
-//   if (userSearch.ustensils.length > 0) {
-//     if (alreadyFilterWithTag) {
-//       resultatsWithTag = resultatsWithTag.filter((recipe) =>
-//         userSearch.ustensils.every((utensil) =>
-//           recipe.ustensilsLabelsList.includes(utensil)
-//         )
-//       );
-//     } else {
-//       resultatsWithTag = arr.filter((recipe) =>
-//         userSearch.ustensils.every((utensil) =>
-//           recipe.ustensilsLabelsList.includes(utensil)
-//         )
-//       );
-//       alreadyFilterWithTag = true;
-//     }
-//   }
-//   showResult(resultatsWithTag);
-//   updateDropdownList(resultatsWithTag);
-// }
+/**
+ * Recherche les recettes avec uniquement les tags
+ * @param {Recipe[]} arr - tableau de recettes
+ */
+function searchAndShowRecipesWithTag(arr) {
+  alreadyFilterWithTag = false;
+  if (userSearch.ingredients.length > 0) {
+    resultatsWithTag = arr.filter((recipe) =>
+      userSearch.ingredients.every((ingredient) =>
+        recipe.ingredientsLabelsList.includes(ingredient)
+      )
+    );
+    alreadyFilterWithTag = true;
+  }
+  if (userSearch.appliances.length > 0) {
+    if (alreadyFilterWithTag) {
+      resultatsWithTag = resultatsWithTag.filter((recipe) =>
+        userSearch.appliances.every(
+          (appliance) => appliance === recipe.appliance.toLowerCase()
+        )
+      );
+    } else {
+      resultatsWithTag = arr.filter((recipe) =>
+        userSearch.appliances.every(
+          (appliance) => appliance === recipe.appliance.toLowerCase()
+        )
+      );
+      alreadyFilterWithTag = true;
+    }
+  }
+  if (userSearch.ustensils.length > 0) {
+    if (alreadyFilterWithTag) {
+      resultatsWithTag = resultatsWithTag.filter((recipe) =>
+        userSearch.ustensils.every((utensil) =>
+          recipe.ustensilsLabelsList.includes(utensil)
+        )
+      );
+    } else {
+      resultatsWithTag = arr.filter((recipe) =>
+        userSearch.ustensils.every((utensil) =>
+          recipe.ustensilsLabelsList.includes(utensil)
+        )
+      );
+      alreadyFilterWithTag = true;
+    }
+  }
+  showResult(resultatsWithTag);
+  updateDropdownList(resultatsWithTag);
+}
 
 /**
  * Récupère les recettes correspondant à la requête

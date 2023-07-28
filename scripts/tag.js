@@ -8,7 +8,7 @@ export function createATag(item, dropdownListItemSelected) {
   tag.innerHTML = `
     ${item}
     <button class="tag__btn">
-      <img src="assets/icon_close.svg" alt="close tag">
+    <i class="fa-sharp fa-solid fa-xmark"></i>
     </button>
   `;
   $tagContainer.appendChild(tag);

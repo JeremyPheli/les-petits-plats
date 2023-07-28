@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto&display=swap"
       rel="stylesheet"
     />
+    <script src="https://kit.fontawesome.com/3f34b0042f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/style/style.css" />
     <link
@@ -29,24 +30,23 @@
         <img class="img-header" src="assets/lampos-aritonang-24gR_9lCdes-unsplash 1.png" alt="" />
         <div class="title-header">LES PETITS PLATS</div>
         <div class="content-header">CHERCHEZ PARMI PLUS DE 1500 RECETTES DU QUOTIDIEN,SIMPLES ET DÉLICIEUSES</div>
-        <div>
+        <div class="search-bar-header">
           <input class="search-header" type="search" placeholder="Rechercher une recette, un ingrédient, ..." />
           <span class="loop-search"><i class="fa-solid fa-magnifying-glass"></i></span>
         </div>
       </header>
       <main>
         <section class="search">
-          <div class="search__tags"></div>
           <div class="search__dropdowns">
             <div id="dropdown-ingredients" class="dropdown">
               <button id="dropdown-ingredients-button" class="dropdown__btn">
                 Ingrédients
-                <img src="assets/icon_arrow_down.svg" alt="" />
+                <div class="fas fa-chevron-down caret"></div>
               </button>
               <div id="dropdown-ingredients-content" class="dropdown__content">
                 <div class="dropdown__search">
-                  <input id="dropdown-input-ingredients" class="dropdown__input" type="text" placeholder="Rechercher un ingrédient">
-                  <img src="assets/icon_arrow_up.svg" alt="" />
+                  <input id="dropdown-input-ingredients" class="dropdown__input" type="text">
+                  <span class="loop-search-dropdown"><i class="fa-solid fa-magnifying-glass"></i></span>
                 </div>
                 <ul id="list-ingredients" class="dropdown__list dropdown__list--ingredients"></ul>
               </div>
@@ -54,12 +54,12 @@
             <div id="dropdown-appliances" class="dropdown">
               <button id="dropdown-appliances-button" class="dropdown__btn">
                 Appareils
-                <img src="assets/icon_arrow_down.svg" alt="" />
+                <div class="fas fa-chevron-down caret"></div>
               </button>
               <div id="dropdown-appliances-content" class="dropdown__content">
                 <div class="dropdown__search">
-                  <input id="dropdown-input-appliances" class="dropdown__input" type="text" placeholder="Rechercher un appareil">
-                  <img src="assets/icon_arrow_up.svg" alt="" />
+                  <input id="dropdown-input-appliances" class="dropdown__input" type="text">
+                  <span class="loop-search-dropdown"><i class="fa-solid fa-magnifying-glass"></i></span>
                 </div>
                 <ul id="list-appliances" class="dropdown__list dropdown__list--appliances"></ul>
               </div>
@@ -67,18 +67,20 @@
             <div id="dropdown-utensils" class="dropdown">
               <button id="dropdown-utensils-button" class="dropdown__btn">
                 Ustensils
-                <img src="assets/icon_arrow_down.svg" alt="" />
+                <div class="fas fa-chevron-down caret"></div>
               </button>
               <div id="dropdown-utensils-content" class="dropdown__content">
                 <div class="dropdown__search">
-                  <input id="dropdown-input-utensils" class="dropdown__input" type="text" placeholder="Rechercher un ustensil">
-                  <img src="assets/icon_arrow_up.svg" alt="" />
+                  <input id="dropdown-input-utensils" class="dropdown__input" type="text">
+                  <span class="loop-search-dropdown"><i class="fa-solid fa-magnifying-glass"></i></span>
                 </div>
                 <ul id="list-utensils" class="dropdown__list dropdown__list--utensils"></ul>
               </div>
             </div>
           </div>
+          <!-- <div class="total__recipes"></div> -->
         </section>
+        <div class="search__tags"></div>
         <section class="recipes">
           <div class="grid"></div>
         </section>

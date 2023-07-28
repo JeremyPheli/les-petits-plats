@@ -27,9 +27,9 @@ export class RecipeCard {
         return `<li>${ingredient.ingredient}</li>`;
       }
       if (ingredient.unit === undefined) {
-        return `<li>${ingredient.ingredient}: <span class="card__quantity">${ingredient.quantity}</span></li>`;
+        return `<li>${ingredient.ingredient} <span class="card__quantity">${ingredient.quantity}</span></li>`;
       }
-      return `<li>${ingredient.ingredient}: <span class="card__quantity">${ingredient.quantity} ${ingredient.unit}</span></li>`;
+      return `<li>${ingredient.ingredient} <span class="card__quantity">${ingredient.quantity} ${ingredient.unit}</span></li>`;
     });
     return ingredientDomElements.join("");
   }
@@ -38,6 +38,7 @@ export class RecipeCard {
     return `
       <div class="card">
           <div class="card__image">
+          <span class="card__time">${this.time}min</span>
             <img 
               class="img__card"
               src="./assets/img/${this.image}"
