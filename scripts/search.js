@@ -172,12 +172,21 @@ function searchAndShowRecipesWithTag(arr) {
  * @returns {Recipe[]} - Retourne un tableau de recettes liés à la requête
  */
 function retrieveMatchingRecipes(arr, query) {
-  return arr.filter(
-    (recipe) =>
-      recipe.name.toLowerCase().includes(query) ||
-      recipe.description.toLowerCase().includes(query) ||
-      recipe.ingredientsAsString.includes(query)
-  );
+  let tempResult = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].name.toLowerCase().includes(query)) {
+      tempResult.push(arr[i]);
+    } else if (arr[i].description.toLowerCase().includes(query)) {
+      tempResult.push(arr[i]);
+    } else if (
+      arr[i].ingredients.some((item) =>
+        item.ingredient.toLowerCase().includes(query)
+      )
+    ) {
+      tempResult.push(arr[i]);
+    }
+  }
+  return tempResult;
 }
 
 // Affiche toutes les recettes
