@@ -15,6 +15,7 @@ const $tagsContainer = document.querySelector(".search__tags");
 const selectTagsIngredients = document.getElementById("list-ingredients");
 const selectTagsAppliances = document.getElementById("list-appliances");
 const selectTagsUtensils = document.getElementById("list-utensils");
+const totalRecipes = document.getElementById("total__recipes");
 
 const recipes = getRecipes();
 

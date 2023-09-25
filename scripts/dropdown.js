@@ -18,6 +18,7 @@ const $dropdownIngredientsContent = document.getElementById(
 const $dropdownIngredientsInput = document.getElementById(
   "dropdown-input-ingredients"
 );
+
 export const $dropdownListIngredients =
   document.getElementById("list-ingredients");
 
@@ -145,19 +146,21 @@ updateListAllUtensils();
  * @param {string} elt - Nom de la dropdown à ouvrir
  */
 
-const caret = document.querySelector(".caret");
+const caret__ingredients = document.querySelector(".caret-ingredients");
+const caret__appliances = document.querySelector(".caret-appliances");
+const caret__utensils = document.querySelector(".caret-utensils");
 
 function openDropdown(elt) {
   if (elt === "ingredients") {
-    caret.classList.toggle("caret-rotate");
+    caret__ingredients.classList.toggle("caret-rotate");
     $dropdownIngredientsContent.classList.add("dropdown-visible");
     $dropdownIngredientsInput.focus();
   } else if (elt === "appliances") {
-    caret.classList.toggle("caret-rotate");
+    caret__appliances.classList.toggle("caret-rotate");
     $dropdownAppliancesContent.classList.add("dropdown-visible");
     $dropdownAppliancesInput.focus();
   } else if (elt === "utensils") {
-    caret.classList.toggle("caret-rotate");
+    caret__utensils.classList.toggle("caret-rotate");
     $dropdownUtensilsContent.classList.add("dropdown-visible");
     $dropdownUtensilsInput.focus();
   }
@@ -167,7 +170,6 @@ function closeDropdownIngredients() {
   $dropdownIngredientsBtn.style.display = "flex";
   $dropdownIngredientsContent.classList.remove("dropdown-visible");
 }
-console.log($dropdownIngredientsBtn);
 
 function closeDropdownAppliances() {
   $dropdownAppliancesBtn.style.display = "flex";

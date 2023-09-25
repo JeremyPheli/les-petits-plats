@@ -30,10 +30,9 @@
         <img class="img-header" src="assets/lampos-aritonang-24gR_9lCdes-unsplash 1.png" alt="" />
         <div class="title-header">LES PETITS PLATS</div>
         <div class="content-header">CHERCHEZ PARMI PLUS DE 1500 RECETTES DU QUOTIDIEN,SIMPLES ET DÉLICIEUSES</div>
-        <div class="search-bar-header">
-          <input class="search-header" type="search" placeholder="Rechercher une recette, un ingrédient, ..." />
-          <span class="loop-search"><i class="fa-solid fa-magnifying-glass"></i></span>
-        </div>
+        <!-- <div class="search-bar-header"> -->
+          <input class="search-header" type="search" placeholder="Rechercher une recette, un ingrédient, ..." /> <i class="fa-solid fa-magnifying-glass loop-search"></i>
+        <!-- </div> -->
       </header>
       <main>
         <section class="search">
@@ -41,7 +40,7 @@
             <div id="dropdown-ingredients" class="dropdown">
               <button id="dropdown-ingredients-button" class="dropdown__btn">
                 Ingrédients
-                <div class="fas fa-chevron-down caret"></div>
+                <div class="fas fa-chevron-down caret-ingredients"></div>
               </button>
               <div id="dropdown-ingredients-content" class="dropdown__content">
                 <div class="dropdown__search">
@@ -54,7 +53,7 @@
             <div id="dropdown-appliances" class="dropdown">
               <button id="dropdown-appliances-button" class="dropdown__btn">
                 Appareils
-                <div class="fas fa-chevron-down caret"></div>
+                <div class="fas fa-chevron-down caret-appliances"></div>
               </button>
               <div id="dropdown-appliances-content" class="dropdown__content">
                 <div class="dropdown__search">
@@ -67,7 +66,7 @@
             <div id="dropdown-utensils" class="dropdown">
               <button id="dropdown-utensils-button" class="dropdown__btn">
                 Ustensils
-                <div class="fas fa-chevron-down caret"></div>
+                <div class="fas fa-chevron-down caret-utensils"></div>
               </button>
               <div id="dropdown-utensils-content" class="dropdown__content">
                 <div class="dropdown__search">
@@ -77,8 +76,8 @@
                 <ul id="list-utensils" class="dropdown__list dropdown__list--utensils"></ul>
               </div>
             </div>
+            <div id="total__recipes">50 recettes</div>
           </div>
-          <!-- <div class="total__recipes"></div> -->
         </section>
         <div class="search__tags"></div>
         <section class="recipes">

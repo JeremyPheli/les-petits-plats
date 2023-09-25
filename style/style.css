@@ -7,7 +7,6 @@
   height: 700px;
 }
 
-
 .title-header {
   position: absolute;
   font-size: 25px;
@@ -35,16 +34,19 @@
 }
 
 .loop-search {
+  display: flex;
+  top: 61%;
+  right: 30%;
   position: absolute;
   width: 55px;
   height: 55px;
   border-radius: 10px;
   background-color: black;
   color: white;
-  display: flex;
   align-items: center;
   justify-content: center;
   font-size: 26px;
+  cursor: pointer;
 }
 
 
@@ -537,4 +539,14 @@
   
   .caret-rotate {
     transform: rotate(180deg);
+  }
+
+  #total__recipes {
+    display: flex;
+    font-size: 21px;
+    font-weight: 400;
+    font-family: Anton;
+    color: black;
+    position: relative;
+    left: 50%;
   }
