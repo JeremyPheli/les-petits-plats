@@ -15,9 +15,11 @@ const $tagsContainer = document.querySelector(".search__tags");
 const selectTagsIngredients = document.getElementById("list-ingredients");
 const selectTagsAppliances = document.getElementById("list-appliances");
 const selectTagsUtensils = document.getElementById("list-utensils");
-const totalRecipes = document.getElementById("total__recipes");
+const totalRecipes = document.querySelector(".total__recipes");
 
 const recipes = getRecipes();
+
+totalRecipes.innerHTML = recipes.length + " recettes ";
 
 let results = [];
 let resultatsWithTag = [];
@@ -25,8 +27,10 @@ let alreadyFilterWithTag = false;
 
 // Système de recherche
 export function mainSearch() {
+  const totalRecipes = document.querySelector(".total__recipes");
   searchBar.addEventListener("input", (e) => {
     userSearch.main = e.target.value.toLowerCase();
+    console.log(userSearch.main);
     if (userSearch.main.length >= 3) {
       if (alreadyFilterWithTag) {
         results = retrieveMatchingRecipes(resultatsWithTag, userSearch.main);
@@ -40,6 +44,10 @@ export function mainSearch() {
       } else {
         showNoResultMessage();
       }
+    } else if (userSearch.main.length < 3) {
+      totalRecipes.innerHTML = results.length + " recettes ";
+      displayAllRecipesAndDropdownList();
+      totalRecipes.innerHTML = recipes.length + " recettes ";
     } else if (
       userSearch.ingredients.length > 0 ||
       userSearch.appliances.length > 0 ||
@@ -197,10 +205,13 @@ function showNoResultMessage() {
  * @param {Recipe[]} result - Tableau de recettes
  */
 function showResult(result) {
+  const totalRecipes = document.querySelector(".total__recipes");
+  totalRecipes.innerHTML = result.length + " recettes ";
   $recipeGrid.innerHTML = "";
   const resultDomElement = result.map((recipe) => {
     const recipeCard = new RecipeCard(recipe);
     return recipeCard.createCard();
   });
+
   $recipeGrid.innerHTML = resultDomElement.join("");
 }
