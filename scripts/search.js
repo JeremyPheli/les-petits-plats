@@ -30,8 +30,7 @@ export function mainSearch() {
   const totalRecipes = document.querySelector(".total__recipes");
   searchBar.addEventListener("input", (e) => {
     userSearch.main = e.target.value.toLowerCase();
-    console.log(userSearch.main);
-    if (userSearch.main.length >= 3) {
+    if (userSearch.main.trim().length >= 3) {
       if (alreadyFilterWithTag) {
         results = retrieveMatchingRecipes(resultatsWithTag, userSearch.main);
       } else {
@@ -42,6 +41,7 @@ export function mainSearch() {
         showResult(results);
         updateDropdownList(results);
       } else {
+        totalRecipes.innerHTML = results.length + " recettes ";
         showNoResultMessage();
       }
     } else if (userSearch.main.length < 3) {
